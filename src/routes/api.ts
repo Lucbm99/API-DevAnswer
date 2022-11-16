@@ -1,14 +1,19 @@
 import { Router } from 'express';
-
-import * as ImagemController from '../controllers/imageController';
+import * as UsuarioController from '../controllers/usuarioController';
+import * as PerguntasController from '../controllers/perguntaController';
 
 const router = Router();
 
-//pegando todas as imagens
-router.get('/imagens', ImagemController.all)
-router.get('/imagem/:id', ImagemController.getImagemById)
+//pegando todos os usuarios
+router.get('/usuarios', UsuarioController.all)
 
-//pegando imagem pelo id
-// router.get('/imagens', ImagemController.all)
+//pegando usuario pelo id
+router.get('/usuario/:id', UsuarioController.getUsuarioById)
+
+//pegando todas as perguntas
+router.get('/perguntas', PerguntasController.all)
+
+//pegando usuario pelo id
+router.get('/pergunta/:id', PerguntasController.getPerguntaById)
 
 export default router;
